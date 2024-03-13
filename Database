@@ -1,0 +1,754 @@
+CREATE DATABASE Payroll_2024;
+USE Payroll_2024;
+drop table payroll;
+
+CREATE TABLE Payroll (
+    ID INT PRIMARY KEY auto_increment,
+    Full_Name VARCHAR(100),
+    Job_Title VARCHAR(100),
+    Department VARCHAR(100),
+    Salary DECIMAL(10, 2),
+    Hours_Worked INT,
+    Overtime_Hours INT,
+    Overtime_Pay DECIMAL(10, 2),
+    Bonus DECIMAL(10, 2),
+    Deductions DECIMAL(10, 2),
+    Net_Pay DECIMAL(10, 2),
+    Car_Benefit VARCHAR(20),
+    Health_Insurance_Benefit VARCHAR(20),
+    Payroll_Month VARCHAR(20)
+);
+
+INSERT INTO Payroll (Full_Name, Job_Title, Department, Salary, Hours_Worked, Overtime_Hours, Overtime_Pay, Bonus, Deductions, Net_Pay, Car_Benefit, Health_Insurance_Benefit, Payroll_Month)
+VALUES 
+("John Smith", "General Manager","Administration", "2800", "220", "30", "500", "0", "680", "2600", "Yes", "Yes", "January"),
+("John Smith", "General Manager","Administration", "2800", "220", "15", "250", "0", "450", "2450", "Yes", "Yes", "February"),
+("John Smith", "General Manager","Administration", "2880", "220", "0", "0", "0", "400", "2480", "Yes", "Yes", "March"),
+("John Smith", "General Manager","Administration", "2880", "220", "10", "200", "0", "400", "2680", "Yes", "Yes", "April"),
+("John Smith", "General Manager","Administration", "2880", "220", "5", "100", "0", "350", "2630", "Yes", "Yes", "May"),
+("John Smith", "General Manager","Administration", "2880", "220", "0", "0", "0", "300", "2580", "Yes", "Yes", "June"),
+("John Smith", "General Manager","Administration", "2880", "220", "20", "400", "0", "450", "2830", "Yes", "Yes", "July"),
+("John Smith", "General Manager","Administration", "2880", "220", "10", "200", "0", "400", "2680", "Yes", "Yes", "August"),
+("John Smith", "General Manager","Administration", "2880", "220", "0", "0", "0", "300", "2580", "Yes", "Yes", "September"),
+("John Smith", "General Manager","Administration", "2880", "220", "15", "250", "0", "450", "2430", "Yes", "Yes", "October"),
+("John Smith", "General Manager","Administration", "2880", "220", "25", "500", "0", "550", "2830", "Yes", "Yes", "November"),
+("John Smith", "General Manager","Administration", "2880", "220", "10", "200", "0", "400", "2680", "Yes", "Yes", "December");
+
+INSERT INTO Payroll (Full_Name, Job_Title, Department, Salary, Hours_Worked, Overtime_Hours, Overtime_Pay, Bonus, Deductions, Net_Pay, Car_Benefit, Health_Insurance_Benefit, Payroll_Month)
+VALUES 
+("Johaness Jameson", "Assistant General Manager","Administration", "2450", "215", "20", "350", "50", "500", "2350", "Yes", "Yes", "January"),
+("Johaness Jameson", "Assistant General Manager","Administration", "2450", "215", "15", "250", "50", "450", "2250", "Yes", "Yes", "February"),
+("Johaness Jameson", "Assistant General Manager","Administration", "2450", "215", "10", "200", "50", "400", "2250", "Yes", "Yes", "March"),
+("Johaness Jameson", "Assistant General Manager","Administration", "2450", "215", "5", "100", "50", "350", "2250", "Yes", "Yes", "April"),
+("Johaness Jameson", "Assistant General Manager","Administration", "2450", "215", "0", "0", "50", "300", "2250", "Yes", "Yes", "May"),
+("Johaness Jameson", "Assistant General Manager","Administration", "2450", "215", "25", "450", "50", "550", "2150", "Yes", "Yes", "June"),
+("Johaness Jameson", "Assistant General Manager","Administration", "2450", "215", "20", "400", "50", "500", "2250", "Yes", "Yes", "July"),
+("Johaness Jameson", "Assistant General Manager","Administration", "2450", "215", "15", "300", "50", "450", "2300", "Yes", "Yes", "August"),
+("Johaness Jameson", "Assistant General Manager","Administration", "2450", "215", "10", "200", "50", "400", "2250", "Yes", "Yes", "September"),
+("Johaness Jameson", "Assistant General Manager","Administration", "2450", "215", "5", "100", "50", "350", "2250", "Yes", "Yes", "October"),
+("Johaness Jameson", "Assistant General Manager","Administration", "2450", "215", "0", "0", "50", "300", "2250", "Yes", "Yes", "November"),
+("Johaness Jameson", "Assistant General Manager","Administration", "2450", "215", "30", "500", "50", "600", "2250", "Yes", "Yes", "December");
+
+INSERT INTO Payroll (Full_Name, Job_Title, Department, Salary, Hours_Worked, Overtime_Hours, Overtime_Pay, Bonus, Deductions, Net_Pay, Car_Benefit, Health_Insurance_Benefit, Payroll_Month)
+VALUES 
+("Denis Warkhole", "IT Manager", "IT", "2300", "220", "25", "550", "50", "550", "2350", "Yes", "Yes", "January"),
+("Denis Warkhole", "IT Manager", "IT", "2300", "220", "20", "500", "50", "500", "2350", "Yes", "Yes", "February"),
+("Denis Warkhole", "IT Manager", "IT", "2300", "220", "15", "450", "50", "450", "2350", "Yes", "Yes", "March"),
+("Denis Warkhole", "IT Manager", "IT", "2300", "220", "10", "400", "50", "400", "2350", "Yes", "Yes", "April"),
+("Denis Warkhole", "IT Manager", "IT", "2300", "220", "5", "350", "50", "350", "2350", "Yes", "Yes", "May"),
+("Denis Warkhole", "IT Manager", "IT", "2300", "220", "30", "600", "50", "600", "2350", "Yes", "Yes", "June"),
+("Denis Warkhole", "IT Manager", "IT", "2300", "220", "25", "550", "50", "550", "2350", "Yes", "Yes", "July"),
+("Denis Warkhole", "IT Manager", "IT", "2300", "220", "20", "500", "50", "500", "2350", "Yes", "Yes", "August"),
+("Denis Warkhole", "IT Manager", "IT", "2300", "220", "15", "450", "50", "450", "2350", "Yes", "Yes", "September"),
+("Denis Warkhole", "IT Manager", "IT", "2300", "220", "10", "400", "50", "400", "2350", "Yes", "Yes", "October"),
+("Denis Warkhole", "IT Manager", "IT", "2300", "220", "5", "350", "50", "350", "2350", "Yes", "Yes", "November"),
+("Denis Warkhole", "IT Manager", "IT", "2300", "220", "30", "600", "50", "600", "2350", "Yes", "Yes", "December");
+
+INSERT INTO Payroll (Full_Name, Job_Title, Department, Salary, Hours_Worked, Overtime_Hours, Overtime_Pay, Bonus, Deductions, Net_Pay, Car_Benefit, Health_Insurance_Benefit, Payroll_Month)
+VALUES 
+("Katrin Ademaioy", "IT Assistant", "IT", "1900", "190", "10", "150", "0", "450", "1600", "No", "Yes", "January"),
+("Katrin Ademaioy", "IT Assistant", "IT", "1900", "190", "5", "100", "0", "400", "1600", "No", "Yes", "February"),
+("Katrin Ademaioy", "IT Assistant", "IT", "1900", "190", "0", "0", "0", "350", "1600", "No", "Yes", "March"),
+("Katrin Ademaioy", "IT Assistant", "IT", "1900", "190", "8", "120", "0", "400", "1600", "No", "Yes", "April"),
+("Katrin Ademaioy", "IT Assistant", "IT", "1900", "190", "3", "50", "0", "350", "1600", "No", "Yes", "May"),
+("Katrin Ademaioy", "IT Assistant", "IT", "1900", "190", "0", "0", "0", "300", "1600", "No", "Yes", "June"),
+("Katrin Ademaioy", "IT Assistant", "IT", "1900", "190", "10", "150", "0", "450", "1600", "No", "Yes", "July"),
+("Katrin Ademaioy", "IT Assistant", "IT", "1900", "190", "5", "100", "0", "400", "1600", "No", "Yes", "August"),
+("Katrin Ademaioy", "IT Assistant", "IT", "1900", "190", "0", "0", "0", "350", "1600", "No", "Yes", "September"),
+("Katrin Ademaioy", "IT Assistant", "IT", "1900", "190", "8", "120", "0", "400", "1600", "No", "Yes", "October"),
+("Katrin Ademaioy", "IT Assistant", "IT", "1900", "190", "4", "60", "0", "350", "1600", "No", "Yes", "November"),
+("Katrin Ademaioy", "IT Assistant", "IT", "1900", "190", "10", "150", "0", "450", "1600", "No", "Yes", "December");
+
+INSERT INTO Payroll (Full_Name, Job_Title, Department, Salary, Hours_Worked, Overtime_Hours, Overtime_Pay, Bonus, Deductions, Net_Pay, Car_Benefit, Health_Insurance_Benefit, Payroll_Month)
+VALUES 
+("Annabelle Santos", "Marketing Manager", "Marketing", "2000", "200", "0", "0", "50", "450", "1600", "Yes", "Yes", "January"),
+("Annabelle Santos", "Marketing Manager", "Marketing", "2000", "200", "0", "0", "50", "450", "1600", "Yes", "Yes", "February"),
+("Annabelle Santos", "Marketing Manager", "Marketing", "2000", "200", "0", "0", "50", "450", "1600", "Yes", "Yes", "March"),
+("Annabelle Santos", "Marketing Manager", "Marketing", "2000", "200", "0", "0", "50", "450", "1600", "Yes", "Yes", "April"),
+("Annabelle Santos", "Marketing Manager", "Marketing", "2000", "200", "0", "0", "50", "450", "1600", "Yes", "Yes", "May"),
+("Annabelle Santos", "Marketing Manager", "Marketing", "2000", "200", "0", "0", "50", "450", "1600", "Yes", "Yes", "June"),
+("Annabelle Santos", "Marketing Manager", "Marketing", "2000", "200", "0", "0", "50", "450", "1600", "Yes", "Yes", "July"),
+("Annabelle Santos", "Marketing Manager", "Marketing", "2000", "200", "0", "0", "50", "450", "1600", "Yes", "Yes", "August"),
+("Annabelle Santos", "Marketing Manager", "Marketing", "2000", "200", "0", "0", "50", "450", "1600", "Yes", "Yes", "September"),
+("Annabelle Santos", "Marketing Manager", "Marketing", "2000", "200", "0", "0", "50", "450", "1600", "Yes", "Yes", "October"),
+("Annabelle Santos", "Marketing Manager", "Marketing", "2000", "200", "0", "0", "50", "450", "1600", "Yes", "Yes", "November"),
+("Annabelle Santos", "Marketing Manager", "Marketing", "2000", "200", "0", "0", "50", "450", "1600", "Yes", "Yes", "December");
+
+INSERT INTO Payroll (Full_Name, Job_Title, Department, Salary, Hours_Worked, Overtime_Hours, Overtime_Pay, Bonus, Deductions, Net_Pay, Car_Benefit, Health_Insurance_Benefit, Payroll_Month)
+VALUES 
+("Marina Kushkova", "Marketing Assistant", "Marketing", "1500", "180", "10", "100", "0", "400", "1200", "Yes", "Yes", "January"),
+("Marina Kushkova", "Marketing Assistant", "Marketing", "1500", "180", "5", "50", "0", "350", "1200", "Yes", "Yes", "February"),
+("Marina Kushkova", "Marketing Assistant", "Marketing", "1500", "180", "0", "0", "0", "300", "1200", "Yes", "Yes", "March"),
+("Marina Kushkova", "Marketing Assistant", "Marketing", "1500", "180", "8", "80", "0", "380", "1200", "Yes", "Yes", "April"),
+("Marina Kushkova", "Marketing Assistant", "Marketing", "1500", "180", "3", "30", "0", "330", "1200", "Yes", "Yes", "May"),
+("Marina Kushkova", "Marketing Assistant", "Marketing", "1500", "180", "0", "0", "0", "300", "1200", "Yes", "Yes", "June"),
+("Marina Kushkova", "Marketing Assistant", "Marketing", "1500", "180", "10", "100", "0", "400", "1200", "Yes", "Yes", "July"),
+("Marina Kushkova", "Marketing Assistant", "Marketing", "1500", "180", "5", "50", "0", "350", "1200", "Yes", "Yes", "August"),
+("Marina Kushkova", "Marketing Assistant", "Marketing", "1500", "180", "0", "0", "0", "300", "1200", "Yes", "Yes", "September"),
+("Marina Kushkova", "Marketing Assistant", "Marketing", "1500", "180", "8", "80", "0", "380", "1200", "Yes", "Yes", "October"),
+("Marina Kushkova", "Marketing Assistant", "Marketing", "1500", "180", "4", "40", "0", "340", "1200", "Yes", "Yes", "November"),
+("Marina Kushkova", "Marketing Assistant", "Marketing", "1500", "180", "10", "100", "0", "400", "1200", "Yes", "Yes", "December");
+
+INSERT INTO Payroll (Full_Name, Job_Title, Department, Salary, Hours_Worked, Overtime_Hours, Overtime_Pay, Bonus, Deductions, Net_Pay, Car_Benefit, Health_Insurance_Benefit, Payroll_Month)
+VALUES 
+("Zayn Muller", "Front Office", "Administration", "1500", "180", "0", "0", "50", "420", "1130", "No", "Yes", "January"),
+("Zayn Muller", "Front Office", "Administration", "1500", "180", "0", "0", "50", "420", "1130", "No", "Yes", "February"),
+("Zayn Muller", "Front Office", "Administration", "1500", "180", "0", "0", "50", "420", "1130", "No", "Yes", "March"),
+("Zayn Muller", "Front Office", "Administration", "1500", "180", "0", "0", "50", "420", "1130", "No", "Yes", "April"),
+("Zayn Muller", "Front Office", "Administration", "1500", "180", "0", "0", "50", "420", "1130", "No", "Yes", "May"),
+("Zayn Muller", "Front Office", "Administration", "1500", "180", "0", "0", "50", "420", "1130", "No", "Yes", "June"),
+("Zayn Muller", "Front Office", "Administration", "1500", "180", "0", "0", "50", "420", "1130", "No", "Yes", "July"),
+("Zayn Muller", "Front Office", "Administration", "1500", "180", "0", "0", "50", "420", "1130", "No", "Yes", "August"),
+("Zayn Muller", "Front Office", "Administration", "1500", "180", "0", "0", "50", "420", "1130", "No", "Yes", "September"),
+("Zayn Muller", "Front Office", "Administration", "1500", "180", "0", "0", "50", "420", "1130", "No", "Yes", "October"),
+("Zayn Muller", "Front Office", "Administration", "1500", "180", "0", "0", "50", "420", "1130", "No", "Yes", "November"),
+("Zayn Muller", "Front Office", "Administration", "1500", "180", "0", "0", "50", "420", "1130", "No", "Yes", "December");
+
+INSERT INTO Payroll (Full_Name, Job_Title, Department, Salary, Hours_Worked, Overtime_Hours, Overtime_Pay, Bonus, Deductions, Net_Pay, Car_Benefit, Health_Insurance_Benefit, Payroll_Month)
+VALUES 
+("Catrin Frances", "Front Office", "Administration", "1500", "180", "0", "0", "50", "420", "1130", "No", "Yes", "January"),
+("Catrin Frances", "Front Office", "Administration", "1500", "180", "0", "0", "50", "420", "1130", "No", "Yes", "February"),
+("Catrin Frances", "Front Office", "Administration", "1500", "180", "0", "0", "50", "420", "1130", "No", "Yes", "March"),
+("Catrin Frances", "Front Office", "Administration", "1500", "180", "0", "0", "50", "420", "1130", "No", "Yes", "April"),
+("Catrin Frances", "Front Office", "Administration", "1500", "180", "0", "0", "50", "420", "1130", "No", "Yes", "May"),
+("Catrin Frances", "Front Office", "Administration", "1500", "180", "0", "0", "50", "420", "1130", "No", "Yes", "June"),
+("Catrin Frances", "Front Office", "Administration", "1500", "180", "0", "0", "50", "420", "1130", "No", "Yes", "July"),
+("Catrin Frances", "Front Office", "Administration", "1500", "180", "0", "0", "50", "420", "1130", "No", "Yes", "August"),
+("Catrin Frances", "Front Office", "Administration", "1500", "180", "0", "0", "50", "420", "1130", "No", "Yes", "September"),
+("Catrin Frances", "Front Office", "Administration", "1500", "180", "0", "0", "50", "420", "1130", "No", "Yes", "October"),
+("Catrin Frances", "Front Office", "Administration", "1500", "180", "0", "0", "50", "420", "1130", "No", "Yes", "November"),
+("Catrin Frances", "Front Office", "Administration", "1500", "180", "0", "0", "50", "420", "1130", "No", "Yes", "December");
+
+INSERT INTO Payroll (Full_Name, Job_Title, Department, Salary, Hours_Worked, Overtime_Hours, Overtime_Pay, Bonus, Deductions, Net_Pay, Car_Benefit, Health_Insurance_Benefit, Payroll_Month)
+VALUES 
+("Mariah Simpson", "Front Office", "Administration", "1500", "180", "0", "0", "0", "400", "1100", "No", "Yes", "January"),
+("Mariah Simpson", "Front Office", "Administration", "1500", "180", "0", "0", "0", "400", "1100", "No", "Yes", "February"),
+("Mariah Simpson", "Front Office", "Administration", "1500", "180", "0", "0", "0", "400", "1100", "No", "Yes", "March"),
+("Mariah Simpson", "Front Office", "Administration", "1500", "180", "0", "0", "0", "400", "1100", "No", "Yes", "April"),
+("Mariah Simpson", "Front Office", "Administration", "1500", "180", "0", "0", "0", "400", "1100", "No", "Yes", "May"),
+("Mariah Simpson", "Front Office", "Administration", "1500", "180", "0", "0", "0", "400", "1100", "No", "Yes", "June"),
+("Mariah Simpson", "Front Office", "Administration", "1500", "180", "0", "0", "0", "400", "1100", "No", "Yes", "July"),
+("Mariah Simpson", "Front Office", "Administration", "1500", "180", "0", "0", "0", "400", "1100", "No", "Yes", "August"),
+("Mariah Simpson", "Front Office", "Administration", "1500", "180", "0", "0", "0", "400", "1100", "No", "Yes", "September"),
+("Mariah Simpson", "Front Office", "Administration", "1500", "180", "0", "0", "0", "400", "1100", "No", "Yes", "October"),
+("Mariah Simpson", "Front Office", "Administration", "1500", "180", "0", "0", "0", "400", "1100", "No", "Yes", "November"),
+("Mariah Simpson", "Front Office", "Administration", "1500", "180", "0", "0", "0", "400", "1100", "No", "Yes", "December");
+
+INSERT INTO Payroll (Full_Name, Job_Title, Department, Salary, Hours_Worked, Overtime_Hours, Overtime_Pay, Bonus, Deductions, Net_Pay, Car_Benefit, Health_Insurance_Benefit, Payroll_Month)
+VALUES 
+("Flash Cannon", "Back Office", "Administration", "1650", "190", "0", "0", "0", "450", "1200", "No", "Yes", "January"),
+("Flash Cannon", "Back Office", "Administration", "1650", "190", "0", "0", "0", "450", "1200", "No", "Yes", "February"),
+("Flash Cannon", "Back Office", "Administration", "1650", "190", "0", "0", "0", "450", "1200", "No", "Yes", "March"),
+("Flash Cannon", "Back Office", "Administration", "1650", "190", "0", "0", "0", "450", "1200", "No", "Yes", "April"),
+("Flash Cannon", "Back Office", "Administration", "1650", "190", "0", "0", "0", "450", "1200", "No", "Yes", "May"),
+("Flash Cannon", "Back Office", "Administration", "1650", "190", "0", "0", "0", "450", "1200", "No", "Yes", "June"),
+("Flash Cannon", "Back Office", "Administration", "1650", "190", "0", "0", "0", "450", "1200", "No", "Yes", "July"),
+("Flash Cannon", "Back Office", "Administration", "1650", "190", "0", "0", "0", "450", "1200", "No", "Yes", "August"),
+("Flash Cannon", "Back Office", "Administration", "1650", "190", "0", "0", "0", "450", "1200", "No", "Yes", "September"),
+("Flash Cannon", "Back Office", "Administration", "1650", "190", "0", "0", "0", "450", "1200", "No", "Yes", "October"),
+("Flash Cannon", "Back Office", "Administration", "1650", "190", "0", "0", "0", "450", "1200", "No", "Yes", "November"),
+("Flash Cannon", "Back Office", "Administration", "1650", "190", "0", "0", "0", "450", "1200", "No", "Yes", "December");
+
+INSERT INTO Payroll (Full_Name, Job_Title, Department, Salary, Hours_Worked, Overtime_Hours, Overtime_Pay, Bonus, Deductions, Net_Pay, Car_Benefit, Health_Insurance_Benefit, Payroll_Month)
+VALUES 
+("Blaze Stone", "Back Office", "Administration", "1650", "190", "0", "0", "0", "450", "1200", "No", "Yes", "January"),
+("Blaze Stone", "Back Office", "Administration", "1650", "190", "0", "0", "0", "450", "1200", "No", "Yes", "February"),
+("Blaze Stone", "Back Office", "Administration", "1650", "190", "0", "0", "0", "450", "1200", "No", "Yes", "March"),
+("Blaze Stone", "Back Office", "Administration", "1650", "190", "0", "0", "0", "450", "1200", "No", "Yes", "April"),
+("Blaze Stone", "Back Office", "Administration", "1650", "190", "0", "0", "0", "450", "1200", "No", "Yes", "May"),
+("Blaze Stone", "Back Office", "Administration", "1650", "190", "0", "0", "0", "450", "1200", "No", "Yes", "June"),
+("Blaze Stone", "Back Office", "Administration", "1650", "190", "0", "0", "0", "450", "1200", "No", "Yes", "July"),
+("Blaze Stone", "Back Office", "Administration", "1650", "190", "0", "0", "0", "450", "1200", "No", "Yes", "August"),
+("Blaze Stone", "Back Office", "Administration", "1650", "190", "0", "0", "0", "450", "1200", "No", "Yes", "September"),
+("Blaze Stone", "Back Office", "Administration", "1650", "190", "0", "0", "0", "450", "1200", "No", "Yes", "October"),
+("Blaze Stone", "Back Office", "Administration", "1650", "190", "0", "0", "0", "450", "1200", "No", "Yes", "November"),
+("Blaze Stone", "Back Office", "Administration", "1650", "190", "0", "0", "0", "450", "1200", "No", "Yes", "December");
+
+INSERT INTO Payroll (Full_Name, Job_Title, Department, Salary, Hours_Worked, Overtime_Hours, Overtime_Pay, Bonus, Deductions, Net_Pay, Car_Benefit, Health_Insurance_Benefit, Payroll_Month)
+VALUES 
+("Emma Johnson", "Back Office Assistant", "Administration", "1650", "190", "0", "0", "0", "450", "1200", "No", "Yes", "January"),
+("Emma Johnson", "Back Office Assistant", "Administration", "1650", "190", "0", "0", "0", "450", "1200", "No", "Yes", "February"),
+("Emma Johnson", "Back Office Assistant", "Administration", "1650", "190", "0", "0", "0", "450", "1200", "No", "Yes", "March"),
+("Emma Johnson", "Back Office Assistant", "Administration", "1650", "190", "0", "0", "0", "450", "1200", "No", "Yes", "April"),
+("Emma Johnson", "Back Office Assistant", "Administration", "1650", "190", "0", "0", "0", "450", "1200", "No", "Yes", "May"),
+("Emma Johnson", "Back Office Assistant", "Administration", "1650", "190", "0", "0", "0", "450", "1200", "No", "Yes", "June"),
+("Emma Johnson", "Back Office Assistant", "Administration", "1650", "190", "0", "0", "0", "450", "1200", "No", "Yes", "July"),
+("Emma Johnson", "Back Office Assistant", "Administration", "1650", "190", "0", "0", "0", "450", "1200", "No", "Yes", "August"),
+("Emma Johnson", "Back Office Assistant", "Administration", "1650", "190", "0", "0", "0", "450", "1200", "No", "Yes", "September"),
+("Emma Johnson", "Back Office Assistant", "Administration", "1650", "190", "0", "0", "0", "450", "1200", "No", "Yes", "October"),
+("Emma Johnson", "Back Office Assistant", "Administration", "1650", "190", "0", "0", "0", "450", "1200", "No", "Yes", "November"),
+("Emma Johnson", "Back Office Assistant", "Administration", "1650", "190", "0", "0", "0", "450", "1200", "No", "Yes", "December");
+
+INSERT INTO Payroll (Full_Name, Job_Title, Department, Salary, Hours_Worked, Overtime_Hours, Overtime_Pay, Bonus, Deductions, Net_Pay, Car_Benefit, Health_Insurance_Benefit, Payroll_Month)
+VALUES 
+("Mike Tesfaye", "Chief Production Worker", "Production", "1250", "180", "20", "300", "0", "550", "1000", "No", "Yes", "January"),
+("Mike Tesfaye", "Chief Production Worker", "Production", "1250", "180", "20", "300", "0", "550", "1000", "No", "Yes", "February"),
+("Mike Tesfaye", "Chief Production Worker", "Production", "1250", "180", "20", "300", "0", "550", "1000", "No", "Yes", "March"),
+("Mike Tesfaye", "Chief Production Worker", "Production", "1250", "180", "20", "300", "0", "550", "1000", "No", "Yes", "April"),
+("Mike Tesfaye", "Chief Production Worker", "Production", "1250", "180", "20", "300", "0", "550", "1000", "No", "Yes", "May"),
+("Mike Tesfaye", "Chief Production Worker", "Production", "1250", "180", "20", "300", "0", "550", "1000", "No", "Yes", "June"),
+("Mike Tesfaye", "Chief Production Worker", "Production", "1250", "180", "20", "300", "0", "550", "1000", "No", "Yes", "July"),
+("Mike Tesfaye", "Chief Production Worker", "Production", "1250", "180", "20", "300", "0", "550", "1000", "No", "Yes", "August"),
+("Mike Tesfaye", "Chief Production Worker", "Production", "1250", "180", "20", "300", "0", "550", "1000", "No", "Yes", "September"),
+("Mike Tesfaye", "Chief Production Worker", "Production", "1250", "180", "20", "300", "0", "550", "1000", "No", "Yes", "October"),
+("Mike Tesfaye", "Chief Production Worker", "Production", "1250", "180", "20", "300", "0", "550", "1000", "No", "Yes", "November"),
+("Mike Tesfaye", "Chief Production Worker", "Production", "1250", "180", "20", "300", "0", "550", "1000", "No", "Yes", "December");
+
+INSERT INTO Payroll (Full_Name, Job_Title, Department, Salary, Hours_Worked, Overtime_Hours, Overtime_Pay, Bonus, Deductions, Net_Pay, Car_Benefit, Health_Insurance_Benefit, Payroll_Month)
+VALUES 
+("Sandra Sellina", "A Class Worker", "Production", "1150", "180", "0", "0", "0", "300", "850", "No", "Yes", "January"),
+("Sandra Sellina", "A Class Worker", "Production", "1150", "180", "0", "0", "0", "300", "850", "No", "Yes", "February"),
+("Sandra Sellina", "A Class Worker", "Production", "1150", "180", "0", "0", "0", "300", "850", "No", "Yes", "March"),
+("Sandra Sellina", "A Class Worker", "Production", "1150", "180", "0", "0", "0", "300", "850", "No", "Yes", "April"),
+("Sandra Sellina", "A Class Worker", "Production", "1150", "180", "0", "0", "0", "300", "850", "No", "Yes", "May"),
+("Sandra Sellina", "A Class Worker", "Production", "1150", "180", "0", "0", "0", "300", "850", "No", "Yes", "June"),
+("Sandra Sellina", "A Class Worker", "Production", "1150", "180", "0", "0", "0", "300", "850", "No", "Yes", "July"),
+("Sandra Sellina", "A Class Worker", "Production", "1150", "180", "0", "0", "0", "300", "850", "No", "Yes", "August"),
+("Sandra Sellina", "A Class Worker", "Production", "1150", "180", "0", "0", "0", "300", "850", "No", "Yes", "September"),
+("Sandra Sellina", "A Class Worker", "Production", "1150", "180", "0", "0", "0", "300", "850", "No", "Yes", "October"),
+("Sandra Sellina", "A Class Worker", "Production", "1150", "180", "0", "0", "0", "300", "850", "No", "Yes", "November"),
+("Sandra Sellina", "A Class Worker", "Production", "1150", "180", "0", "0", "0", "300", "850", "No", "Yes", "December");
+
+INSERT INTO Payroll (Full_Name, Job_Title, Department, Salary, Hours_Worked, Overtime_Hours, Overtime_Pay, Bonus, Deductions, Net_Pay, Car_Benefit, Health_Insurance_Benefit, Payroll_Month)
+VALUES 
+("David Nguyen", "Production Worker", "Production", "1200", "175", "5", "100", "0", "350", "950", "No", "Yes", "January"),
+("David Nguyen", "Production Worker", "Production", "1200", "175", "5", "100", "0", "350", "950", "No", "Yes", "February"),
+("David Nguyen", "Production Worker", "Production", "1200", "175", "5", "100", "0", "350", "950", "No", "Yes", "March"),
+("David Nguyen", "Production Worker", "Production", "1200", "175", "5", "100", "0", "350", "950", "No", "Yes", "April"),
+("David Nguyen", "Production Worker", "Production", "1200", "175", "5", "100", "0", "350", "950", "No", "Yes", "May"),
+("David Nguyen", "Production Worker", "Production", "1200", "175", "5", "100", "0", "350", "950", "No", "Yes", "June"),
+("David Nguyen", "Production Worker", "Production", "1200", "175", "5", "100", "0", "350", "950", "No", "Yes", "July"),
+("David Nguyen", "Production Worker", "Production", "1200", "175", "5", "100", "0", "350", "950", "No", "Yes", "August"),
+("David Nguyen", "Production Worker", "Production", "1200", "175", "5", "100", "0", "350", "950", "No", "Yes", "September"),
+("David Nguyen", "Production Worker", "Production", "1200", "175", "5", "100", "0", "350", "950", "No", "Yes", "October"),
+("David Nguyen", "Production Worker", "Production", "1200", "175", "5", "100", "0", "350", "950", "No", "Yes", "November"),
+("David Nguyen", "Production Worker", "Production", "1200", "175", "5", "100", "0", "350", "950", "No", "Yes", "December");
+
+INSERT INTO Payroll (Full_Name, Job_Title, Department, Salary, Hours_Worked, Overtime_Hours, Overtime_Pay, Bonus, Deductions, Net_Pay, Car_Benefit, Health_Insurance_Benefit, Payroll_Month)
+VALUES 
+("Olivia Garcia", "A Class Worker", "Production", "1150", "180", "0", "0", "0", "300", "850", "No", "Yes", "January"),
+("Olivia Garcia", "A Class Worker", "Production", "1150", "180", "0", "0", "0", "300", "850", "No", "Yes", "February"),
+("Olivia Garcia", "A Class Worker", "Production", "1150", "180", "0", "0", "0", "300", "850", "No", "Yes", "March"),
+("Olivia Garcia", "A Class Worker", "Production", "1150", "180", "0", "0", "0", "300", "850", "No", "Yes", "April"),
+("Olivia Garcia", "A Class Worker", "Production", "1150", "180", "0", "0", "0", "300", "850", "No", "Yes", "May"),
+("Olivia Garcia", "A Class Worker", "Production", "1150", "180", "0", "0", "0", "300", "850", "No", "Yes", "June"),
+("Olivia Garcia", "A Class Worker", "Production", "1150", "180", "0", "0", "0", "300", "850", "No", "Yes", "July"),
+("Olivia Garcia", "A Class Worker", "Production", "1150", "180", "0", "0", "0", "300", "850", "No", "Yes", "August"),
+("Olivia Garcia", "A Class Worker", "Production", "1150", "180", "0", "0", "0", "300", "850", "No", "Yes", "September"),
+("Olivia Garcia", "A Class Worker", "Production", "1150", "180", "0", "0", "0", "300", "850", "No", "Yes", "October"),
+("Olivia Garcia", "A Class Worker", "Production", "1150", "180", "0", "0", "0", "300", "850", "No", "Yes", "November"),
+("Olivia Garcia", "A Class Worker", "Production", "1150", "180", "0", "0", "0", "300", "850", "No", "Yes", "December");
+
+INSERT INTO Payroll (Full_Name, Job_Title, Department, Salary, Hours_Worked, Overtime_Hours, Overtime_Pay, Bonus, Deductions, Net_Pay, Car_Benefit, Health_Insurance_Benefit, Payroll_Month)
+VALUES 
+("Sophie Brown", "A Class Worker", "Production", "1150", "180", "0", "0", "0", "300", "850", "No", "Yes", "January"),
+("Sophie Brown", "A Class Worker", "Production", "1150", "180", "0", "0", "0", "300", "850", "No", "Yes", "February"),
+("Sophie Brown", "A Class Worker", "Production", "1150", "180", "0", "0", "0", "300", "850", "No", "Yes", "March"),
+("Sophie Brown", "A Class Worker", "Production", "1150", "180", "0", "0", "0", "300", "850", "No", "Yes", "April"),
+("Sophie Brown", "A Class Worker", "Production", "1150", "180", "0", "0", "0", "300", "850", "No", "Yes", "May"),
+("Sophie Brown", "A Class Worker", "Production", "1150", "180", "0", "0", "0", "300", "850", "No", "Yes", "June"),
+("Sophie Brown", "A Class Worker", "Production", "1150", "180", "0", "0", "0", "300", "850", "No", "Yes", "July"),
+("Sophie Brown", "A Class Worker", "Production", "1150", "180", "0", "0", "0", "300", "850", "No", "Yes", "August"),
+("Sophie Brown", "A Class Worker", "Production", "1150", "180", "0", "0", "0", "300", "850", "No", "Yes", "September"),
+("Sophie Brown", "A Class Worker", "Production", "1150", "180", "0", "0", "0", "300", "850", "No", "Yes", "October"),
+("Sophie Brown", "A Class Worker", "Production", "1150", "180", "0", "0", "0", "300", "850", "No", "Yes", "November"),
+("Sophie Brown", "A Class Worker", "Production", "1150", "180", "0", "0", "0", "300", "850", "No", "Yes", "December");
+
+INSERT INTO Payroll (Full_Name, Job_Title, Department, Salary, Hours_Worked, Overtime_Hours, Overtime_Pay, Bonus, Deductions, Net_Pay, Car_Benefit, Health_Insurance_Benefit, Payroll_Month)
+VALUES 
+("Giovanni Rossi", "Production Worker", "Production", "1200", "175", "5", "100", "0", "350", "950", "No", "Yes", "January"),
+("Giovanni Rossi", "Production Worker", "Production", "1200", "175", "5", "100", "0", "350", "950", "No", "Yes", "February"),
+("Giovanni Rossi", "Production Worker", "Production", "1200", "175", "5", "100", "0", "350", "950", "No", "Yes", "March"),
+("Giovanni Rossi", "Production Worker", "Production", "1200", "175", "5", "100", "0", "350", "950", "No", "Yes", "April"),
+("Giovanni Rossi", "Production Worker", "Production", "1200", "175", "5", "100", "0", "350", "950", "No", "Yes", "May"),
+("Giovanni Rossi", "Production Worker", "Production", "1200", "175", "5", "100", "0", "350", "950", "No", "Yes", "June"),
+("Giovanni Rossi", "Production Worker", "Production", "1200", "175", "5", "100", "0", "350", "950", "No", "Yes", "July"),
+("Giovanni Rossi", "Production Worker", "Production", "1200", "175", "5", "100", "0", "350", "950", "No", "Yes", "August"),
+("Giovanni Rossi", "Production Worker", "Production", "1200", "175", "5", "100", "0", "350", "950", "No", "Yes", "September"),
+("Giovanni Rossi", "Production Worker", "Production", "1200", "175", "5", "100", "0", "350", "950", "No", "Yes", "October"),
+("Giovanni Rossi", "Production Worker", "Production", "1200", "175", "5", "100", "0", "350", "950", "No", "Yes", "November"),
+("Giovanni Rossi", "Production Worker", "Production", "1200", "175", "5", "100", "0", "350", "950", "No", "Yes", "December");
+
+INSERT INTO Payroll (Full_Name, Job_Title, Department, Salary, Hours_Worked, Overtime_Hours, Overtime_Pay, Bonus, Deductions, Net_Pay, Car_Benefit, Health_Insurance_Benefit, Payroll_Month)
+VALUES 
+("Maximilian Müller", "Production Worker", "Production", "1200", "175", "5", "100", "0", "350", "950", "No", "Yes", "January"),
+("Maximilian Müller", "Production Worker", "Production", "1200", "175", "5", "100", "0", "350", "950", "No", "Yes", "February"),
+("Maximilian Müller", "Production Worker", "Production", "1200", "175", "5", "100", "0", "350", "950", "No", "Yes", "March"),
+("Maximilian Müller", "Production Worker", "Production", "1200", "175", "5", "100", "0", "350", "950", "No", "Yes", "April"),
+("Maximilian Müller", "Production Worker", "Production", "1200", "175", "5", "100", "0", "350", "950", "No", "Yes", "May"),
+("Maximilian Müller", "Production Worker", "Production", "1200", "175", "5", "100", "0", "350", "950", "No", "Yes", "June"),
+("Maximilian Müller", "Production Worker", "Production", "1200", "175", "5", "100", "0", "350", "950", "No", "Yes", "July"),
+("Maximilian Müller", "Production Worker", "Production", "1200", "175", "5", "100", "0", "350", "950", "No", "Yes", "August"),
+("Maximilian Müller", "Production Worker", "Production", "1200", "175", "5", "100", "0", "350", "950", "No", "Yes", "September"),
+("Maximilian Müller", "Production Worker", "Production", "1200", "175", "5", "100", "0", "350", "950", "No", "Yes", "October"),
+("Maximilian Müller", "Production Worker", "Production", "1200", "175", "5", "100", "0", "350", "950", "No", "Yes", "November"),
+("Maximilian Müller", "Production Worker", "Production", "1200", "175", "5", "100", "0", "350", "950", "No", "Yes", "December");
+
+INSERT INTO Payroll (Full_Name, Job_Title, Department, Salary, Hours_Worked, Overtime_Hours, Overtime_Pay, Bonus, Deductions, Net_Pay, Car_Benefit, Health_Insurance_Benefit, Payroll_Month)
+VALUES 
+("Nikos Papadopoulos", "Production Worker", "Production", "1200", "175", "5", "100", "0", "350", "950", "No", "Yes", "January"),
+("Nikos Papadopoulos", "Production Worker", "Production", "1200", "175", "5", "100", "0", "350", "950", "No", "Yes", "February"),
+("Nikos Papadopoulos", "Production Worker", "Production", "1200", "175", "5", "100", "0", "350", "950", "No", "Yes", "March"),
+("Nikos Papadopoulos", "Production Worker", "Production", "1200", "175", "5", "100", "0", "350", "950", "No", "Yes", "April"),
+("Nikos Papadopoulos", "Production Worker", "Production", "1200", "175", "5", "100", "0", "350", "950", "No", "Yes", "May"),
+("Nikos Papadopoulos", "Production Worker", "Production", "1200", "175", "5", "100", "0", "350", "950", "No", "Yes", "June"),
+("Nikos Papadopoulos", "Production Worker", "Production", "1200", "175", "5", "100", "0", "350", "950", "No", "Yes", "July"),
+("Nikos Papadopoulos", "Production Worker", "Production", "1200", "175", "5", "100", "0", "350", "950", "No", "Yes", "August"),
+("Nikos Papadopoulos", "Production Worker", "Production", "1200", "175", "5", "100", "0", "350", "950", "No", "Yes", "September"),
+("Nikos Papadopoulos", "Production Worker", "Production", "1200", "175", "5", "100", "0", "350", "950", "No", "Yes", "October"),
+("Nikos Papadopoulos", "Production Worker", "Production", "1200", "175", "5", "100", "0", "350", "950", "No", "Yes", "November"),
+("Nikos Papadopoulos", "Production Worker", "Production", "1200", "175", "5", "100", "0", "350", "950", "No", "Yes", "December");
+
+INSERT INTO Payroll (Full_Name, Job_Title, Department, Salary, Hours_Worked, Overtime_Hours, Overtime_Pay, Bonus, Deductions, Net_Pay, Car_Benefit, Health_Insurance_Benefit, Payroll_Month)
+VALUES 
+("Dimitrios Georgiou", "A Class Worker", "Production", "1150", "180", "0", "0", "0", "300", "850", "No", "Yes", "January"),
+("Dimitrios Georgiou", "A Class Worker", "Production", "1150", "180", "0", "0", "0", "300", "850", "No", "Yes", "February"),
+("Dimitrios Georgiou", "A Class Worker", "Production", "1150", "180", "0", "0", "0", "300", "850", "No", "Yes", "March"),
+("Dimitrios Georgiou", "A Class Worker", "Production", "1150", "180", "0", "0", "0", "300", "850", "No", "Yes", "April"),
+("Dimitrios Georgiou", "A Class Worker", "Production", "1150", "180", "0", "0", "0", "300", "850", "No", "Yes", "May"),
+("Dimitrios Georgiou", "A Class Worker", "Production", "1150", "180", "0", "0", "0", "300", "850", "No", "Yes", "June"),
+("Dimitrios Georgiou", "A Class Worker", "Production", "1150", "180", "0", "0", "0", "300", "850", "No", "Yes", "July"),
+("Dimitrios Georgiou", "A Class Worker", "Production", "1150", "180", "0", "0", "0", "300", "850", "No", "Yes", "August"),
+("Dimitrios Georgiou", "A Class Worker", "Production", "1150", "180", "0", "0", "0", "300", "850", "No", "Yes", "September"),
+("Dimitrios Georgiou", "A Class Worker", "Production", "1150", "180", "0", "0", "0", "300", "850", "No", "Yes", "October"),
+("Dimitrios Georgiou", "A Class Worker", "Production", "1150", "180", "0", "0", "0", "300", "850", "No", "Yes", "November"),
+("Dimitrios Georgiou", "A Class Worker", "Production", "1150", "180", "0", "0", "0", "300", "850", "No", "Yes", "December");
+
+INSERT INTO Payroll (Full_Name, Job_Title, Department, Salary, Hours_Worked, Overtime_Hours, Overtime_Pay, Bonus, Deductions, Net_Pay, Car_Benefit, Health_Insurance_Benefit, Payroll_Month)
+VALUES 
+("Kalenc Friedrichson", "Production Worker", "Production", "1000", "170", "0", "0", "0", "300", "700", "No", "No", "February"),
+("Kalenc Friedrichson", "Production Worker", "Production", "1000", "170", "0", "0", "0", "300", "700", "No", "No", "March"),
+("Kalenc Friedrichson", "Production Worker", "Production", "1000", "170", "0", "0", "0", "300", "700", "No", "No", "April"),
+("Kalenc Friedrichson", "Production Worker", "Production", "1000", "170", "0", "0", "0", "300", "700", "No", "No", "May"),
+("Kalenc Friedrichson", "Production Worker", "Production", "1000", "170", "0", "0", "0", "300", "700", "No", "No", "June"),
+("Kalenc Friedrichson", "Production Worker", "Production", "1000", "170", "0", "0", "0", "300", "700", "No", "No", "July"),
+("Kalenc Friedrichson", "Production Worker", "Production", "1000", "170", "0", "0", "0", "300", "700", "No", "No", "August"),
+("Kalenc Friedrichson", "Production Worker", "Production", "1000", "170", "0", "0", "0", "300", "700", "No", "No", "September"),
+("Kalenc Friedrichson", "Production Worker", "Production", "1000", "170", "0", "0", "0", "300", "700", "No", "No", "October"),
+("Kalenc Friedrichson", "Production Worker", "Production", "1000", "170", "0", "0", "0", "300", "700", "No", "No", "November"),
+("Kalenc Friedrichson", "Production Worker", "Production", "1000", "170", "0", "0", "0", "300", "700", "No", "No", "December");
+
+INSERT INTO Payroll (Full_Name, Job_Title, Department, Salary, Hours_Worked, Overtime_Hours, Overtime_Pay, Bonus, Deductions, Net_Pay, Car_Benefit, Health_Insurance_Benefit, Payroll_Month)
+VALUES 
+("Erik Schneider", "Production Worker", "Production", "1100", "160", "0", "0", "0", "320", "780", "No", "Yes", "January"),
+("Erik Schneider", "Production Worker", "Production", "1100", "160", "0", "0", "0", "320", "780", "No", "Yes", "February"),
+("Erik Schneider", "Production Worker", "Production", "1100", "160", "0", "0", "0", "320", "780", "No", "Yes", "March"),
+("Erik Schneider", "Production Worker", "Production", "1100", "160", "0", "0", "0", "320", "780", "No", "Yes", "April"),
+("Erik Schneider", "Production Worker", "Production", "1100", "160", "0", "0", "0", "320", "780", "No", "Yes", "May"),
+("Erik Schneider", "Production Worker", "Production", "1100", "160", "0", "0", "0", "320", "780", "No", "Yes", "June"),
+("Erik Schneider", "Production Worker", "Production", "1100", "160", "0", "0", "0", "320", "780", "No", "Yes", "July"),
+("Erik Schneider", "Production Worker", "Production", "1100", "160", "0", "0", "0", "320", "780", "No", "Yes", "August"),
+("Erik Schneider", "Production Worker", "Production", "1100", "160", "0", "0", "0", "320", "780", "No", "Yes", "September"),
+("Erik Schneider", "Production Worker", "Production", "1100", "160", "0", "0", "0", "320", "780", "No", "Yes", "October"),
+("Erik Schneider", "Production Worker", "Production", "1100", "160", "0", "0", "0", "320", "780", "No", "Yes", "November"),
+("Erik Schneider", "Production Worker", "Production", "1100", "160", "0", "0", "0", "320", "780", "No", "Yes", "December");
+
+INSERT INTO Payroll (Full_Name, Job_Title, Department, Salary, Hours_Worked, Overtime_Hours, Overtime_Pay, Bonus, Deductions, Net_Pay, Car_Benefit, Health_Insurance_Benefit, Payroll_Month)
+VALUES 
+("Anton Fischer", "Production Worker", "Production", "1150", "170", "0", "0", "0", "330", "820", "No", "Yes", "January"),
+("Anton Fischer", "Production Worker", "Production", "1150", "170", "0", "0", "0", "330", "820", "No", "Yes", "February"),
+("Anton Fischer", "Production Worker", "Production", "1150", "170", "0", "0", "0", "330", "820", "No", "Yes", "March"),
+("Anton Fischer", "Production Worker", "Production", "1150", "170", "0", "0", "0", "330", "820", "No", "Yes", "April"),
+("Anton Fischer", "Production Worker", "Production", "1150", "170", "0", "0", "0", "330", "820", "No", "Yes", "May"),
+("Anton Fischer", "Production Worker", "Production", "1150", "170", "0", "0", "0", "330", "820", "No", "Yes", "June"),
+("Anton Fischer", "Production Worker", "Production", "1150", "170", "0", "0", "0", "330", "820", "No", "Yes", "July"),
+("Anton Fischer", "Production Worker", "Production", "1150", "170", "0", "0", "0", "330", "820", "No", "Yes", "August"),
+("Anton Fischer", "Production Worker", "Production", "1150", "170", "0", "0", "0", "330", "820", "No", "Yes", "September"),
+("Anton Fischer", "Production Worker", "Production", "1150", "170", "0", "0", "0", "330", "820", "No", "Yes", "October"),
+("Anton Fischer", "Production Worker", "Production", "1150", "170", "0", "0", "0", "330", "820", "No", "Yes", "November"),
+("Anton Fischer", "Production Worker", "Production", "1150", "170", "0", "0", "0", "330", "820", "No", "Yes", "December");
+
+INSERT INTO Payroll (Full_Name, Job_Title, Department, Salary, Hours_Worked, Overtime_Hours, Overtime_Pay, Bonus, Deductions, Net_Pay, Car_Benefit, Health_Insurance_Benefit, Payroll_Month)
+VALUES 
+("Matthias Weber", "Production Worker", "Production", "1200", "160", "0", "0", "0", "350", "850", "No", "Yes", "January"),
+("Matthias Weber", "Production Worker", "Production", "1200", "160", "0", "0", "0", "350", "850", "No", "Yes", "February"),
+("Matthias Weber", "Production Worker", "Production", "1200", "160", "0", "0", "0", "350", "850", "No", "Yes", "March"),
+("Matthias Weber", "Production Worker", "Production", "1200", "160", "0", "0", "0", "350", "850", "No", "Yes", "April"),
+("Matthias Weber", "Production Worker", "Production", "1200", "160", "0", "0", "0", "350", "850", "No", "Yes", "May"),
+("Matthias Weber", "Production Worker", "Production", "1200", "160", "0", "0", "0", "350", "850", "No", "Yes", "June"),
+("Matthias Weber", "Production Worker", "Production", "1200", "160", "0", "0", "0", "350", "850", "No", "Yes", "July"),
+("Matthias Weber", "Production Worker", "Production", "1200", "160", "0", "0", "0", "350", "850", "No", "Yes", "August"),
+("Matthias Weber", "Production Worker", "Production", "1200", "160", "0", "0", "0", "350", "850", "No", "Yes", "September"),
+("Matthias Weber", "Production Worker", "Production", "1200", "160", "0", "0", "0", "350", "850", "No", "Yes", "October"),
+("Matthias Weber", "Production Worker", "Production", "1200", "160", "0", "0", "0", "350", "850", "No", "Yes", "November"),
+("Matthias Weber", "Production Worker", "Production", "1200", "160", "0", "0", "0", "350", "850", "No", "Yes", "December");
+
+
+INSERT INTO Payroll (Full_Name, Job_Title, Department, Salary, Hours_Worked, Overtime_Hours, Overtime_Pay, Bonus, Deductions, Net_Pay, Car_Benefit, Health_Insurance_Benefit, Payroll_Month)
+VALUES 
+("Stefanos Papadopoulos", "Production Worker", "Production", "1150", "160", "0", "0", "0", "330", "820", "No", "Yes", "January"),
+("Stefanos Papadopoulos", "Production Worker", "Production", "1150", "160", "0", "0", "0", "330", "820", "No", "Yes", "February"),
+("Stefanos Papadopoulos", "Production Worker", "Production", "1150", "160", "0", "0", "0", "330", "820", "No", "Yes", "March"),
+("Stefanos Papadopoulos", "Production Worker", "Production", "1150", "160", "0", "0", "0", "330", "820", "No", "Yes", "April"),
+("Stefanos Papadopoulos", "Production Worker", "Production", "1150", "160", "0", "0", "0", "330", "820", "No", "Yes", "May"),
+("Stefanos Papadopoulos", "Production Worker", "Production", "1150", "160", "0", "0", "0", "330", "820", "No", "Yes", "June"),
+("Stefanos Papadopoulos", "Production Worker", "Production", "1150", "160", "0", "0", "0", "330", "820", "No", "Yes", "July"),
+("Stefanos Papadopoulos", "Production Worker", "Production", "1150", "160", "0", "0", "0", "330", "820", "No", "Yes", "August"),
+("Stefanos Papadopoulos", "Production Worker", "Production", "1150", "160", "0", "0", "0", "330", "820", "No", "Yes", "September"),
+("Stefanos Papadopoulos", "Production Worker", "Production", "1150", "160", "0", "0", "0", "330", "820", "No", "Yes", "October"),
+("Stefanos Papadopoulos", "Production Worker", "Production", "1150", "160", "0", "0", "0", "330", "820", "No", "Yes", "November"),
+("Stefanos Papadopoulos", "Production Worker", "Production", "1150", "160", "0", "0", "0", "330", "820", "No", "Yes", "December");
+
+
+INSERT INTO Payroll (Full_Name, Job_Title, Department, Salary, Hours_Worked, Overtime_Hours, Overtime_Pay, Bonus, Deductions, Net_Pay, Car_Benefit, Health_Insurance_Benefit, Payroll_Month)
+VALUES 
+("Giorgio Rossi", "Production Worker", "Production", "1200", "160", "0", "0", "0", "350", "850", "No", "Yes", "January"),
+("Giorgio Rossi", "Production Worker", "Production", "1200", "160", "0", "0", "0", "350", "850", "No", "Yes", "February"),
+("Giorgio Rossi", "Production Worker", "Production", "1200", "160", "0", "0", "0", "350", "850", "No", "Yes", "March"),
+("Giorgio Rossi", "Production Worker", "Production", "1200", "160", "0", "0", "0", "350", "850", "No", "Yes", "April"),
+("Giorgio Rossi", "Production Worker", "Production", "1200", "160", "0", "0", "0", "350", "850", "No", "Yes", "May"),
+("Giorgio Rossi", "Production Worker", "Production", "1200", "160", "0", "0", "0", "350", "850", "No", "Yes", "June"),
+("Giorgio Rossi", "Production Worker", "Production", "1200", "160", "0", "0", "0", "350", "850", "No", "Yes", "July"),
+("Giorgio Rossi", "Production Worker", "Production", "1200", "160", "0", "0", "0", "350", "850", "No", "Yes", "August"),
+("Giorgio Rossi", "Production Worker", "Production", "1200", "160", "0", "0", "0", "350", "850", "No", "Yes", "September"),
+("Giorgio Rossi", "Production Worker", "Production", "1200", "160", "0", "0", "0", "350", "850", "No", "Yes", "October"),
+("Giorgio Rossi", "Production Worker", "Production", "1200", "160", "0", "0", "0", "350", "850", "No", "Yes", "November"),
+("Giorgio Rossi", "Production Worker", "Production", "1200", "160", "0", "0", "0", "350", "850", "No", "Yes", "December");
+
+
+INSERT INTO Payroll (Full_Name, Job_Title, Department, Salary, Hours_Worked, Overtime_Hours, Overtime_Pay, Bonus, Deductions, Net_Pay, Car_Benefit, Health_Insurance_Benefit, Payroll_Month)
+VALUES 
+("Marco Rossi", "Production Worker", "Production", "1250", "160", "0", "0", "0", "370", "880", "No", "Yes", "January"),
+("Marco Rossi", "Production Worker", "Production", "1250", "160", "0", "0", "0", "370", "880", "No", "Yes", "February"),
+("Marco Rossi", "Production Worker", "Production", "1250", "160", "0", "0", "0", "370", "880", "No", "Yes", "March"),
+("Marco Rossi", "Production Worker", "Production", "1250", "160", "0", "0", "0", "370", "880", "No", "Yes", "April"),
+("Marco Rossi", "Production Worker", "Production", "1250", "160", "0", "0", "0", "370", "880", "No", "Yes", "May"),
+("Marco Rossi", "Production Worker", "Production", "1250", "160", "0", "0", "0", "370", "880", "No", "Yes", "June"),
+("Marco Rossi", "Production Worker", "Production", "1250", "160", "0", "0", "0", "370", "880", "No", "Yes", "July"),
+("Marco Rossi", "Production Worker", "Production", "1250", "160", "0", "0", "0", "370", "880", "No", "Yes", "August"),
+("Marco Rossi", "Production Worker", "Production", "1250", "160", "0", "0", "0", "370", "880", "No", "Yes", "September"),
+("Marco Rossi", "Production Worker", "Production", "1250", "160", "0", "0", "0", "370", "880", "No", "Yes", "October"),
+("Marco Rossi", "Production Worker", "Production", "1250", "160", "0", "0", "0", "370", "880", "No", "Yes", "November"),
+("Marco Rossi", "Production Worker", "Production", "1250", "160", "0", "0", "0", "370", "880", "No", "Yes", "December");
+
+INSERT INTO Payroll (Full_Name, Job_Title, Department, Salary, Hours_Worked, Overtime_Hours, Overtime_Pay, Bonus, Deductions, Net_Pay, Car_Benefit, Health_Insurance_Benefit, Payroll_Month)
+VALUES 
+("Luca Müller", "Production Worker", "Production", "1200", "160", "0", "0", "0", "350", "850", "No", "Yes", "January"),
+("Luca Müller", "Production Worker", "Production", "1200", "160", "0", "0", "0", "350", "850", "No", "Yes", "February"),
+("Luca Müller", "Production Worker", "Production", "1200", "160", "0", "0", "0", "350", "850", "No", "Yes", "March"),
+("Luca Müller", "Production Worker", "Production", "1200", "160", "0", "0", "0", "350", "850", "No", "Yes", "April"),
+("Luca Müller", "Production Worker", "Production", "1200", "160", "0", "0", "0", "350", "850", "No", "Yes", "May"),
+("Luca Müller", "Production Worker", "Production", "1200", "160", "0", "0", "0", "350", "850", "No", "Yes", "June"),
+("Luca Müller", "Production Worker", "Production", "1200", "160", "0", "0", "0", "350", "850", "No", "Yes", "July"),
+("Luca Müller", "Production Worker", "Production", "1200", "160", "0", "0", "0", "350", "850", "No", "Yes", "August"),
+("Luca Müller", "Production Worker", "Production", "1200", "160", "0", "0", "0", "350", "850", "No", "Yes", "September"),
+("Luca Müller", "Production Worker", "Production", "1200", "160", "0", "0", "0", "350", "850", "No", "Yes", "October"),
+("Luca Müller", "Production Worker", "Production", "1200", "160", "0", "0", "0", "350", "850", "No", "Yes", "November"),
+("Luca Müller", "Production Worker", "Production", "1200", "160", "0", "0", "0", "350", "850", "No", "Yes", "December");
+
+
+INSERT INTO Payroll (Full_Name, Job_Title, Department, Salary, Hours_Worked, Overtime_Hours, Overtime_Pay, Bonus, Deductions, Net_Pay, Car_Benefit, Health_Insurance_Benefit, Payroll_Month)
+VALUES 
+("Fabio Bianchi", "Production Worker", "Production", "1150", "160", "0", "0", "0", "330", "820", "No", "Yes", "January"),
+("Fabio Bianchi", "Production Worker", "Production", "1150", "160", "0", "0", "0", "330", "820", "No", "Yes", "February"),
+("Fabio Bianchi", "Production Worker", "Production", "1150", "160", "0", "0", "0", "330", "820", "No", "Yes", "March"),
+("Fabio Bianchi", "Production Worker", "Production", "1150", "160", "0", "0", "0", "330", "820", "No", "Yes", "April"),
+("Fabio Bianchi", "Production Worker", "Production", "1150", "160", "0", "0", "0", "330", "820", "No", "Yes", "May"),
+("Fabio Bianchi", "Production Worker", "Production", "1150", "160", "0", "0", "0", "330", "820", "No", "Yes", "June"),
+("Fabio Bianchi", "Production Worker", "Production", "1150", "160", "0", "0", "0", "330", "820", "No", "Yes", "July"),
+("Fabio Bianchi", "Production Worker", "Production", "1150", "160", "0", "0", "0", "330", "820", "No", "Yes", "August"),
+("Fabio Bianchi", "Production Worker", "Production", "1150", "160", "0", "0", "0", "330", "820", "No", "Yes", "September"),
+("Fabio Bianchi", "Production Worker", "Production", "1150", "160", "0", "0", "0", "330", "820", "No", "Yes", "October"),
+("Fabio Bianchi", "Production Worker", "Production", "1150", "160", "0", "0", "0", "330", "820", "No", "Yes", "November"),
+("Fabio Bianchi", "Production Worker", "Production", "1150", "160", "0", "0", "0", "330", "820", "No", "Yes", "December");
+
+
+INSERT INTO Payroll (Full_Name, Job_Title, Department, Salary, Hours_Worked, Overtime_Hours, Overtime_Pay, Bonus, Deductions, Net_Pay, Car_Benefit, Health_Insurance_Benefit, Payroll_Month)
+VALUES 
+("Lorenzo Schneider", "Production Worker", "Production", "1200", "160", "0", "0", "0", "350", "850", "No", "Yes", "January"),
+("Lorenzo Schneider", "Production Worker", "Production", "1200", "160", "0", "0", "0", "350", "850", "No", "Yes", "February"),
+("Lorenzo Schneider", "Production Worker", "Production", "1200", "160", "0", "0", "0", "350", "850", "No", "Yes", "March"),
+("Lorenzo Schneider", "Production Worker", "Production", "1200", "160", "0", "0", "0", "350", "850", "No", "Yes", "April"),
+("Lorenzo Schneider", "Production Worker", "Production", "1200", "160", "0", "0", "0", "350", "850", "No", "Yes", "May"),
+("Lorenzo Schneider", "Production Worker", "Production", "1200", "160", "0", "0", "0", "350", "850", "No", "Yes", "June"),
+("Lorenzo Schneider", "Production Worker", "Production", "1200", "160", "0", "0", "0", "350", "850", "No", "Yes", "July"),
+("Lorenzo Schneider", "Production Worker", "Production", "1200", "160", "0", "0", "0", "350", "850", "No", "Yes", "August"),
+("Lorenzo Schneider", "Production Worker", "Production", "1200", "160", "0", "0", "0", "350", "850", "No", "Yes", "September"),
+("Lorenzo Schneider", "Production Worker", "Production", "1200", "160", "0", "0", "0", "350", "850", "No", "Yes", "October"),
+("Lorenzo Schneider", "Production Worker", "Production", "1200", "160", "0", "0", "0", "350", "850", "No", "Yes", "November"),
+("Lorenzo Schneider", "Production Worker", "Production", "1200", "160", "0", "0", "0", "350", "850", "No", "Yes", "December");
+
+ -- QUERIES --
+ SELECT * FROM Payroll;
+ SELECT DISTINCT Full_Name from payroll;
+ 
+ -- Highest Net Paid
+ SELECT Full_Name,Job_Title,Sum(Net_Pay) AS Total_Net_Pay FROM payroll
+ GROUP BY Full_Name,Job_Title
+ ORDER BY Total_Net_Pay DESC;
+ 
+ -- Highest Salary
+ SELECT Full_Name,Job_Title,Sum(Salary) AS Total_Salary FROM payroll
+ GROUP BY Full_Name,Job_Title
+ ORDER BY Total_Salary DESC;
+ 
+-- Total Working Hours
+ SELECT Full_Name,Job_Title,Sum(Hours_Worked)+Sum(Overtime_Hours) AS Working_Hours FROM payroll
+ GROUP BY Full_Name,Job_Title
+ ORDER BY Working_Hours DESC;
+ 
+ -- Overtime
+  SELECT Full_Name,Job_Title,Sum(Overtime_Hours) AS Overtime_Hours FROM payroll
+ GROUP BY Full_Name,Job_Title
+ ORDER BY Overtime_Hours DESC;
+
+-- Salaries by Department
+SELECT Department,SUM(Salary) as Salaries FROM payroll
+GROUP BY Department
+ORDER BY Salaries DESC;
+
+-- Payroll by month
+SELECT Payroll_Month,Sum(Salary) AS Monthly_Salary FROM payroll
+GROUP BY Payroll_Month
+ORDER BY Monthly_Salary DESC;
+
+-- Deductions
+ SELECT Full_Name,Job_Title,Sum(Deductions) AS Total_Deductions FROM payroll
+ GROUP BY Full_Name,Job_Title
+ ORDER BY Total_Deductions DESC;
+ 
+ SELECT * FROM sales;
+ 
+-- Quantities sales
+SELECT Country,SUM(Quantity) AS Quantities FROM sales
+GROUP BY Country
+ORDER BY Quantities DESC;
+
+-- Money sales
+SELECT Country,SUM(Price) AS Total_Price FROM sales
+GROUP BY Country
+ORDER BY Total_Price DESC;
+
+
+
+
+
+ CREATE TABLE Sales(
+ ID INT PRIMARY KEY auto_increment,
+ Country VARCHAR(50),
+ Quantity INT,
+ Price INT);
+ 
+INSERT INTO Sales (Country, Quantity, Price)
+VALUES
+    ("Germany", 10, 1000),
+    ("France", 20, 1500),
+    ("Italy", 15, 1200),
+    ("Spain", 12, 1100),
+    ("UK", 18, 1300),
+    ("USA", 25, 2000),
+    ("Canada", 22, 1800),
+    ("Australia", 30, 2200),
+    ("Japan", 17, 1600),
+    ("China", 21, 1900),
+	("Germany", 10, 1000),
+    ("France", 20, 1500),
+    ("Italy", 15, 1200),
+    ("Spain", 12, 1100),
+    ("UK", 18, 1300),
+    ("USA", 25, 2000),
+    ("Canada", 22, 1800),
+    ("Australia", 30, 2200),
+    ("Japan", 17, 1600),
+    ("China", 21, 1900),
+    ("Mexico", 24, 1700),
+    ("Brazil", 28, 2100),
+    ("Argentina", 16, 1400),
+    ("South Africa", 19, 1750),
+    ("India", 23, 1950),
+    ("Russia", 27, 2050),
+    ("South Korea", 14, 1250),
+    ("Netherlands", 26, 2150),
+    ("Belgium", 29, 2250),
+    ("Sweden", 13, 1350),
+    ("Germany", 10, 1000),
+    ("France", 20, 1500),
+    ("Italy", 15, 1200),
+    ("Spain", 12, 1100),
+    ("UK", 18, 1300),
+    ("USA", 25, 2000),
+    ("Canada", 22, 1800),
+    ("Australia", 30, 2200),
+    ("Japan", 17, 1600),
+    ("China", 21, 1900),
+    ("Mexico", 24, 1700),
+    ("Brazil", 28, 2100),
+    ("Argentina", 16, 1400),
+    ("South Africa", 19, 1750),
+    ("India", 23, 1950),
+    ("Russia", 27, 2050),
+    ("South Korea", 14, 1250),
+    ("Netherlands", 26, 2150),
+    ("Belgium", 29, 2250),
+    ("Sweden", 13, 1350),
+    ("Norway", 31, 2300),
+    ("Denmark", 11, 1050),
+    ("Switzerland", 32, 2400),
+    ("Austria", 9, 950),
+    ("New Zealand", 35, 2600),
+    ("Portugal", 8, 850),
+    ("Greece", 33, 2450),
+    ("Turkey", 34, 2550),
+    ("Poland", 36, 2700),
+    ("Czech Republic", 37, 2800),
+    ("Hungary", 38, 2900),
+    ("Finland", 39, 3000),
+    ("Ireland", 40, 3100),
+    ("Singapore", 41, 3200),
+    ("Malaysia", 42, 3300),
+    ("Thailand", 43, 3400),
+    ("Vietnam", 44, 3500),
+    ("Philippines", 45, 3600),
+    ("Indonesia", 46, 3700),
+        ("Germany", 10, 1000),
+    ("France", 20, 1500),
+    ("Italy", 15, 1200),
+    ("Spain", 12, 1100),
+    ("UK", 18, 1300),
+    ("Netherlands", 26, 2150),
+    ("Belgium", 29, 2250),
+    ("Sweden", 13, 1350),
+    ("Norway", 31, 2300),
+    ("Denmark", 11, 1050),
+    ("Switzerland", 32, 2400),
+    ("Austria", 9, 950),
+    ("Portugal", 8, 850),
+    ("Greece", 33, 2450),
+    ("Poland", 36, 2700),
+    ("Czech Republic", 37, 2800),
+    ("Hungary", 38, 2900),
+    ("Finland", 39, 3000),
+    ("Ireland", 40, 3100),
+    ("Norway", 41, 3200),
+        ("Germany", 10, 1000),
+    ("France", 20, 1500),
+    ("Italy", 15, 1200),
+    ("Spain", 12, 1100),
+    ("UK", 18, 1300),
+    ("Netherlands", 26, 2150),
+    ("Belgium", 29, 2250),
+    ("Sweden", 13, 1350),
+    ("Norway", 31, 2300),
+    ("Denmark", 11, 1050),
+    ("Switzerland", 32, 2400),
+    ("Austria", 9, 950),
+    ("Portugal", 8, 850),
+    ("Greece", 33, 2450),
+    ("Poland", 36, 2700),
+    ("Czech Republic", 37, 2800),
+    ("Hungary", 38, 2900),
+    ("Finland", 39, 3000),
+    ("Ireland", 40, 3100),
+    ("Romania", 23, 1750),
+        ("Germany", 10, 1000),
+    ("France", 20, 1500),
+    ("Italy", 15, 1200),
+    ("Spain", 12, 1100),
+    ("UK", 18, 1300),
+    ("Netherlands", 26, 2150),
+    ("Belgium", 29, 2250),
+    ("Sweden", 13, 1350),
+    ("Norway", 31, 2300),
+    ("Denmark", 11, 1050),
+    ("Switzerland", 32, 2400),
+    ("Austria", 9, 950),
+    ("Portugal", 8, 850),
+    ("Greece", 33, 2450),
+    ("Poland", 36, 2700),
+    ("Czech Republic", 37, 2800),
+    ("Hungary", 38, 2900),
+    ("Finland", 39, 3000),
+    ("Ireland", 40, 3100),
+    ("Slovakia", 25, 2000),
+	("Denmark", 11, 1050),
+    ("Norway", 31, 2300),
+    ("Sweden", 13, 1350),
+    ("Denmark", 22, 2050),
+    ("Norway", 42, 3200),
+    ("Sweden", 24, 2250),
+    ("Denmark", 15, 1250),
+    ("Norway", 35, 2600),
+    ("Sweden", 17, 1450),
+    ("Denmark", 28, 2100),
+    ("Norway", 38, 2800),
+    ("Sweden", 19, 1650),
+    ("Denmark", 31, 2350),
+    ("Norway", 40, 3000),
+    ("Sweden", 21, 1850),
+    ("Denmark", 34, 2650),
+    ("Norway", 44, 3400),
+    ("Sweden", 23, 1950),
+    ("Denmark", 37, 2900),
+    ("Norway", 46, 3600),
+	("USA", 25, 2000),
+    ("Canada", 22, 1800),
+    ("Mexico", 24, 1700),
+    ("Brazil", 28, 2100),
+    ("Argentina", 16, 1400),
+    ("Colombia", 20, 1600),
+    ("Chile", 18, 1500),
+    ("Peru", 14, 1300),
+    ("Venezuela", 30, 1900),
+    ("Ecuador", 26, 1750),
+    ("Bolivia", 12, 1200),
+    ("Paraguay", 21, 1850),
+    ("Uruguay", 17, 1450),
+    ("Costa Rica", 19, 1650),
+    ("Panama", 23, 1950),
+    ("Honduras", 27, 2050),
+    ("Guatemala", 15, 1350),
+    ("El Salvador", 29, 2150),
+    ("Nicaragua", 31, 2250),
+    ("Haiti", 33, 2350),
+	("USA", 25, 2000),
+    ("Canada", 22, 1800),
+    ("Mexico", 24, 1700),
+    ("Brazil", 28, 2100),
+    ("Argentina", 16, 1400),
+    ("Colombia", 20, 1600),
+    ("Chile", 18, 1500),
+    ("Peru", 14, 1300),
+    ("Venezuela", 30, 1900),
+    ("Ecuador", 26, 1750),
+    ("Bolivia", 12, 1200),
+    ("Paraguay", 21, 1850),
+    ("Uruguay", 17, 1450),
+    ("Costa Rica", 19, 1650),
+    ("Panama", 23, 1950),
+    ("Honduras", 27, 2050),
+    ("Guatemala", 15, 1350),
+    ("El Salvador", 29, 2150),
+    ("Nicaragua", 31, 2250),
+    ("Cuba", 32, 2300);
+    
+
+
+
+
+
+
+
+
+
+
+
